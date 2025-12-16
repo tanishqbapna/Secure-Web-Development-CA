@@ -5,6 +5,7 @@ require 'db.php';
 $is_logged_in = isset($_SESSION['user_id']);
 $role = $_SESSION['role'] ?? '';
 
+$username = $_SESSION['username'];
 $userId = $_GET['user_id'] ?? null;
 
 if ($userId === null) {
@@ -57,7 +58,6 @@ $stmt->execute([
         $booking_message = "Invalid package selected!";
     }
 }
-
 
 
 if(isset($_POST['cancel_booking'])){
@@ -143,7 +143,7 @@ input, select, textarea { padding:0.5rem; border-radius:5px; border:1px solid #c
     <?php endforeach; ?>
 
     <h2>Your Bookings</h2>
-    <div class="table-container">
+    <div class="container">
     <table>
     <tr>
         <th>Package</th><th>Date</th><th>People</th><th>Requests</th><th>Status</th><th>Total Price</th><th>Action</th>
