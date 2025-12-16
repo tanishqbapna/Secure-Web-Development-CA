@@ -5,6 +5,8 @@ require 'db.php';
 $is_logged_in = isset($_SESSION['user_id']);
 $role = $_SESSION['role'] ?? '';
 
+$role = $_SESSION['role'];
+$username = $_SESSION['username'];
 
 if(!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin'){
     header('Location: login.php');
