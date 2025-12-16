@@ -5,7 +5,6 @@ require 'db.php';
 $is_logged_in = isset($_SESSION['user_id']);
 $role = $_SESSION['role'] ?? '';
 
-
 $login_error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -42,7 +41,7 @@ exit;
     <link rel="stylesheet" type="text/css" href="style.css"> 
     </head>
     <body>
-
+        
         <nav class="navbar">
             <div class="nav-content">
                 <div class="logo">🌴 Paradise Travels</div>
@@ -56,7 +55,7 @@ exit;
                         <a href="admin-dashboard.php">Dashboard</a>
                     <?php endif; ?>
                     <?php if(!$is_logged_in): ?>
-                        <a href="login_secure.php">Login</a>
+                        <a href="login.php">Login</a>
                     <?php else: ?>
                         <a href="logout.php">Logout</a>
                     <?php endif; ?>
@@ -85,7 +84,6 @@ exit;
             <div class="nav-link">
             New user? <a href="register.php">Register here</a>
             </div>
-
         </div>
 
     </body>
